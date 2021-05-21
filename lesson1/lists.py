@@ -1,7 +1,10 @@
 testLists = [3, 5, 7, 9, 10.5]
-print (testLists)
+print(testLists)
 testLists.append("Python")
+print(testLists)
 len(testLists)
 print(testLists [0])
 print(testLists [-1])
 print(testLists [1:4])
+testLists.remove("Python")
+print(testLists)
