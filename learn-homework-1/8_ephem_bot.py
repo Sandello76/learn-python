@@ -35,7 +35,9 @@ def talk_to_me(update, context):
     update.message.reply_text(text)
 
 def planet_list(update, context):
+
     planets = ('Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune')
+
     message = update.message.text.split()
     planet = message[1].lower().capitalize()
     if planet in planets:
@@ -44,11 +46,13 @@ def planet_list(update, context):
         stars = ephem.constellation(planet_info)
         update.message.reply_text(stars[1])
 
+
 def planet_help(update, context):
     if context != "":
        help= "Введите /planet ИмяПланеты,список планет: 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'"
        print(help)
     update.message.reply_text(help)
+
 def main():
     mybot = Updater(settings.API_KEY, use_context=True)
 
@@ -56,7 +60,7 @@ def main():
     dp.add_handler(CommandHandler("start", greet_user))
     dp.add_handler(CommandHandler("planet", planet_list))
     dp.add_handler(CommandHandler("planet", planet_help))
-    dp.add_handler(MessageHandler(Filters.text, talk_to_me))
+
 
     mybot.start_polling()
     mybot.idle()

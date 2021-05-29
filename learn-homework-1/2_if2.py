@@ -20,7 +20,9 @@ def main(str1, str2):
         return 0
     elif str1 == str2:
         return 1
+
     elif len(str1) > len(str2):
+
         return 2
     elif str1 != str2 and str2 == 'learn':
         return 3
