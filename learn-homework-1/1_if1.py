@@ -17,7 +17,10 @@ age = int(input("Сколько Вам полных лет ?  "))
 def main(age):
     if 3 <= age < 7:
         return "Детский сад ждет Вас"
-    elif age == 7 and age < 17:
+
+    elif 7 <= age < 17:
+
+
         return "Учится в школе надо 10 лет"
     elif age ==18:
         return "2 пути у тебя или ВУЗ или Армия - решай"
